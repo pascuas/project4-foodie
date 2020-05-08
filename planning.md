@@ -8,6 +8,6 @@ Ever had a hard time choosing somewhere to eat? With this application a user wil
 - [Github repo](https://github.com/pascuas/project4-foodie)
 
 ## Wireframe and Architecture
-
+- [WireFrame](https://res.cloudinary.com/drxoihdbb/image/upload/v1588950899/Pictures/IMG_1358_bdjxrr.heic)
 
 - [React Architecture](https://docs.google.com/document/d/1rOb5WokU1RTJ0gcR09SP7fa5Kovn0YWyMuZAL1Nph8Y/edit)
