@@ -19,5 +19,5 @@ Ever had a hard time choosing somewhere to eat? With this application a user wil
         - Address
         - Images
         - Reviews
-    -Reviews
+    - Reviews
         - Review
