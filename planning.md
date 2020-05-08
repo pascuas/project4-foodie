@@ -38,8 +38,8 @@ Ever had a hard time choosing somewhere to eat? With this application a user wil
 | Routes | H | 1hr | | |
 | Controllers | H | 5hrs | | |
 | Seed | H | 2hrs | | |
-| Heroku Deployment | 1hr | | |
-| Setting Up React | 0.5hr | | |
+| Heroku Deployment | H | 1hr | |
+| Setting Up React | H | 0.5hr | |
 | Switch, Links, Routes | H | 1hr | | |
 | Connection from backend | H | 4hrs | | |
 | Landing Page | H | 2hrs | | |
