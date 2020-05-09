@@ -2,7 +2,7 @@ const Image = require('../models/image')
 const Restaurant = require('../models/restaurant')
 
 const getAll = (req, res) => {
-    Image.find().then(images => res.json(images))
+    Image.find({}).then(images => res.json(images))
 }
 
 const getById = (req, res) => {

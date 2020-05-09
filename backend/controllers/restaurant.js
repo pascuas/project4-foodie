@@ -1,7 +1,7 @@
 const Restaurant = require('../models/restaurant')
 
 const getAll = (req, res) => {
-    Restaurant.find().populate([{
+    Restaurant.find({}).populate([{
         path: 'review',
         model: 'Review'
     },  {

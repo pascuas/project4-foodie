@@ -3,7 +3,7 @@ const Restaurant = require('../models/restaurant')
 
 
 const getAll = (req, res) => {
-    Review.find().then(reviews => res.json(reviews))
+    Review.find({}).then(reviews => res.json(reviews))
 }
 
 const getById = (req, res) => {
