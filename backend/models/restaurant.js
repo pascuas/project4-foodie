@@ -9,13 +9,13 @@ const RestaurantSchema = new Schema({
     Address: String,
     Reviews: [
         {
-            ref: "Review",
+            ref: 'Review',
             type: mongoose.Schema.Types.ObjectId
         }
     ],
     Images: [
         {
-            ref: "Image",
+            ref: 'Image',
             type: mongoose.Schema.Types.ObjectId
         }
     ]
