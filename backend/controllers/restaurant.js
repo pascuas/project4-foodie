@@ -2,20 +2,20 @@ const Restaurant = require('../models/restaurant')
 
 const getAll = (req, res) => {
     Restaurant.find({}).populate([{
-        path: 'review',
+        path: 'Reviews',
         model: 'Review'
     },  {
-        path: 'image',
+        path: 'Images',
         model: 'Image'
     }]).then(restaurants => res.json(restaurants))
 }
 
 const getById = (req, res) => {
     Restaurant.findById(req.params.id).populate([{
-        path: 'review',
+        path: 'Reviews',
         model: 'Review'
     },  {
-        path: 'image',
+        path: 'Images',
         model: 'Image'
     }]).then(restaurant => res.json(restaurant))
 }
