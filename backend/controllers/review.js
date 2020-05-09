@@ -7,13 +7,13 @@ const getAll = (req, res) => {
 }
 
 const getById = (req, res) => {
-    Review.findById(req.params.id).then(review => {
+    Review.findById(req.params.reviewId).then(review => {
         res.json(review)
     })
 }
 
 const create = (req, res) => {
-    Review.create(req.body).then(review => Restaurant.findOne({_id: req.params.Id}).then(restaurant => {
+    Review.create(req.body).then(review => Restaurant.findOne({_id: req.params.resId}).then(restaurant => {
         restaurant.Reviews.push(review._id)
         restaurant.save()
         res.json(restaurant)
