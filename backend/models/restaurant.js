@@ -6,6 +6,7 @@ const RestaurantSchema = new Schema({
     Name: String,
     Type: String,
     Cost: String,
+    CityState: String,
     Address: String,
     Reviews: [
         {
