@@ -6,13 +6,13 @@ const getAll = (req, res) => {
 }
 
 const getById = (req, res) => {
-    Image.findById(req.params.id).then(image => {
+    Image.findById(req.params.imageId).then(image => {
         res.json(image)
     })
 }
 
 const create = (req, res) => {
-    Image.create(req.body).then(image => Restaurant.findOne({_id: req.params.Id}).then(restaurant => {
+    Image.create(req.body).then(image => Restaurant.findOne({_id: req.params.resId}).then(restaurant => {
         restaurant.Images.push(image._id)
         restaurant.save()
         res.json(restaurant)
