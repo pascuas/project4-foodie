@@ -4,10 +4,12 @@ const Schema = mongoose.Schema
 
 const RestaurantSchema = new Schema({
     Name: String,
+    Description: String,
     Type: String,
     Cost: String,
     CityState: String,
     Address: String,
+    PhoneNum: String,
     Reviews: [
         {
             ref: 'Review',
