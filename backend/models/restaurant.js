@@ -10,6 +10,12 @@ const RestaurantSchema = new Schema({
     CityState: String,
     Address: String,
     PhoneNum: String,
+    Hours: [
+        {
+            ref: 'Hour',
+            type: mongoose.Schema.Types.ObjectId
+        }
+    ],
     Reviews: [
         {
             ref: 'Review',

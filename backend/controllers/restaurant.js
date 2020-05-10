@@ -2,6 +2,9 @@ const Restaurant = require('../models/restaurant')
 
 const getAll = (req, res) => {
     Restaurant.find({}).populate([{
+        path: 'Hours',
+        model: 'Hour'
+    },  {
         path: 'Reviews',
         model: 'Review'
     },  {
