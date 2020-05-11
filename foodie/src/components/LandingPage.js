@@ -7,7 +7,7 @@ function LandingPage(props){
         <h1>This is the landing page</h1>
         <form className = "citySearch" onSubmit={props.citySubmit}>
             <label>Enter City, State:</label><input type="text" value={props.city} onChange={props.cityChange}/>
-            <Link to='/results'><button>Search</button></Link>
+            <Link to={`/${props.city}`}><button>Search</button></Link>
         </form>
         </>
     )

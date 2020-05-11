@@ -4,6 +4,7 @@ import './App.css';
 import {Switch, Route} from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 import Results from './components/Results'
+import RestaurantInfo from './components/RestaurantInfo'
 import {getAllRes} from './services/api-helper'
 
 function App() {
@@ -31,9 +32,9 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path="/" render = {() => <LandingPage cityChange={cityChange} citySubmit={citySubmit}/>} />
-        <Route exact path="/results" render = {() => <Results restaurants = {restaurants} city={city}/>} />
-
+        <Route exact path="/" render = {() => <LandingPage cityChange={cityChange} citySubmit={citySubmit}city={city}/>} />
+        <Route exact path="/:city" render = {(routerProps) => <Results restaurants = {restaurants} city={city}{...routerProps}/>} />
+        <Route exact path="/:city/:restaurant" render = {(routerProps) => <RestaurantInfo restaurants = {restaurants}{...routerProps}/>} />
       </Switch>
     </>
   );
