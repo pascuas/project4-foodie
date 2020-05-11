@@ -10,7 +10,7 @@ const faveRoutes = require('./routes/favoriteRoutes')
 const hourRoutes = require('./routes/hourRoutes')
 
 app.use(parser.json())
-app.use(bodyParser.urlencoded({ extended:true}))
+app.use(parser.urlencoded({ extended:true}))
 app.use(cors())
 
 app.use('/restaurants', restaurantRoutes)
