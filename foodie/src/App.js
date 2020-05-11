@@ -9,6 +9,7 @@ import {getAllRes} from './services/api-helper'
 function App() {
   const [restaurants, setRestaurants] = useState([])
   const [isLoading, setIsloading] = useState(true)
+  const [city, setCity] = useState('')
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -19,11 +20,19 @@ function App() {
     makeAPICall()
   }, [])
 
+  const cityChange = (e) => {
+    setCity(e.target.value)
+  }
+
+  const citySubmit = async(e) => {
+    e.preventDefault()
+  }
+
   return (
     <>
       <Switch>
-        <Route exact path="/" render = {() => <LandingPage />} />
-        <Route exact path="/results" render = {() => <Results restaurants = {restaurants}/>} />
+        <Route exact path="/" render = {() => <LandingPage cityChange={cityChange} citySubmit={citySubmit}/>} />
+        <Route exact path="/results" render = {() => <Results restaurants = {restaurants} city={city}/>} />
 
       </Switch>
     </>
