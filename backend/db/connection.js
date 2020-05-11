@@ -16,3 +16,6 @@ mongoose.connect(mongoURI, {useNewUrlParser: true})
     })
 
 module.exports = mongoose
+
+// heroku config:set DB_URL="mongodb+srv://dbadmin:dbadmin@cluster0-eupfx.mongodb.net/test?retryWrites=true&w=majority"
+// heroku config:set DB_URL="mongodb+srv://dbadmin:dbadmin@cluster0-eupfx.mongodb.net/test?retryWrites=true&w=majority"
