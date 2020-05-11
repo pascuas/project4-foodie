@@ -33,12 +33,12 @@ Ever had a hard time choosing somewhere to eat? With this application a user wil
 ## Time/Priority
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Connection | H | 2hrs | | |
-| Express | H | 2hrs | | |
-| Routes | H | 1hr | | |
-| Controllers | H | 5hrs | | |
-| Seed | H | 2hrs | | |
-| Heroku Deployment | H | 1hr | |
+| Connection | H | 2hrs | 1hr | 1hr |
+| Express | H | 2hrs | 1hr | 1hr |
+| Routes | H | 1hr | 1hr | 1hr |
+| Controllers | H | 5hrs | 4hrs | 4hrs |
+| Seed | H | 2hrs | 3hrs | 3hrs |
+| Heroku Deployment | H | 1hr | 3hrs | 3hrs |
 | Setting Up React | H | 0.5hr | |
 | Switch, Links, Routes | H | 1hr | | |
 | Connection from backend | H | 4hrs | | |
