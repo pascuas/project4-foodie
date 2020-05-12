@@ -13,7 +13,7 @@ function Results(props) {
     const renderRestaurants = cityRestaurants.map((restaurant, index) => {
         return(
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={restaurant.Images[0].image} />
+                {restaurant.Images ? <Card.Img variant="top" src={restaurant.Images[0].image} /> : <Card.Img variant="top" src="https://www.sbdcnet.org/wp-content/themes/consultix/images/no-image-found-360x250.png" />} 
                 <Card.Body>
                     <Card.Title>{restaurant.Name}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{restaurant.Cost}  {restaurant.Description}</Card.Subtitle>

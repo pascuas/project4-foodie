@@ -41,7 +41,7 @@ function AddRestaurant() {
 
     const restaurantSubmit = async(e) => {
         e.preventDefault()
-        const json = await createRes({"Name": name, "Descritpion": description, "Type": type,
+        const json = await createRes({"Name": name, "Description": description, "Type": type,
                                         "Cost": cost, "CityState": cityState, "Address": address, "PhoneNum": phoneNum})
         setName('')
         setDescription('')
