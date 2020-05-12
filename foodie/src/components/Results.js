@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Card from 'react-bootstrap/Card'
 import {Link} from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
@@ -11,6 +11,7 @@ function Results(props) {
 
     let cityRestaurants = props.restaurants.filter(restaurant => restaurant.CityState.toLowerCase().replace(/\s+/g,'') === props.city.toLowerCase().replace(/\s+/g,''))
     console.log('cityRestaurants', cityRestaurants)
+    
 
     const renderRestaurants = cityRestaurants.map((restaurant, index) => {
         return(
@@ -38,6 +39,9 @@ function Results(props) {
                 </Nav>
             </Navbar>
             <h1>This is the results page</h1>
+            {cityRestaurants.length === 0 &&
+            <h1>No restaurants were found. Please search again</h1>
+            }
             {renderRestaurants}
         </>
     )
