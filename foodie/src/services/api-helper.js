@@ -28,3 +28,8 @@ export const updateRes = async (id, body) => {
     const resp = await api.put(`/restaurants/${id}`, body);
     return resp.data
 }
+
+export const createImage = async (resId, body) => {
+    const resp = await api.post(`/images/${resId}`, body);
+    return resp.data
+}

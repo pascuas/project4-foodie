@@ -1,16 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Image from 'react-bootstrap/Image'
 import '../css/RestaurantInfo.css'
+import {getResById, createImage} from '../services/api-helper'
 
 function RestaurantInfo(props){
+    const [newImage, setNewImage] = useState('')
+
     console.log('restaurant-info', props)
     let info = []
     for (let i=0; i< props.restaurants.length; i++)
     if (props.restaurants[i].Name === props.match.params.restaurant){
         info = props.restaurants[i]
     }
+    
 
-    console.log('info', info.Images)
+    console.log('info', info)
 
     if (!info.Images) {
         return <></>
@@ -35,6 +39,22 @@ function RestaurantInfo(props){
         )
     })
 
+    const imageChange = (e) => {
+        setNewImage(e.target.value)
+    }
+
+    const imageSubmit = async(e) => {
+        e.preventDefault()
+        const json = await createImage(info._id, {"image": newImage})
+        setNewImage('')
+        // renderPage()
+    }
+
+    // const renderPage = async() => {
+    //     const json = await getResById(info._id)
+    //     let info = json
+    // }
+
     return(
         <>
         <h1>This is restaurant info</h1>
@@ -46,6 +66,10 @@ function RestaurantInfo(props){
         <div className="imageContainer">
             {renderImages}
         </div>
+        <form onSubmit={imageSubmit}>
+            <label>Image Url:</label><input type="text" value={newImage} onChange={imageChange}/>
+            <button>Add</button>
+        </form>
         </>
     )
 }
