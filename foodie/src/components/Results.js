@@ -28,6 +28,7 @@ function Results(props) {
 
     return(
         <>
+            <Link to="/add/your/restaurant">Add Your Restaurant</Link>
             <h1>This is the results page</h1>
             {renderRestaurants}
         </>
