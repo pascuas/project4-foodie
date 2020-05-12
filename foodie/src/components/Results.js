@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 
 function Results(props) {
@@ -17,10 +18,9 @@ function Results(props) {
                     <Card.Title>{restaurant.Name}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{restaurant.Cost}  {restaurant.Description}</Card.Subtitle>
                     <Card.Text>
-                        {restaurant.Address}
+                        {restaurant.Address}  {restaurant.CityState}
                     </Card.Text>
-                    <Card.Link href="#">Card Link</Card.Link>
-                    <Card.Link href="#">Another Link</Card.Link>
+                    <Card.Link><Link to={`/${props.city}/${restaurant.Name}`}>More Info</Link></Card.Link>
                 </Card.Body>
             </Card>
         )
