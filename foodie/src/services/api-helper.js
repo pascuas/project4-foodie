@@ -33,3 +33,8 @@ export const createImage = async (resId, body) => {
     const resp = await api.post(`/images/${resId}`, body);
     return resp.data
 }
+
+export const createReview = async (resId, body) => {
+    const resp = await api.post(`/reviews/${resId}`, body)
+    return resp.data
+}
