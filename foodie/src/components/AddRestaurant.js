@@ -63,7 +63,7 @@ function AddRestaurant() {
                 <label>CityState:</label><input type="text" value={cityState} onChange={cityStateChange}/><br/>
                 <label>Address:</label><input type="text" value={address} onChange={addressChange}/><br/>
                 <label>Phone Number:</label><input type="text" value={phoneNum} onChange={phoneChange}/><br/>
-                <Link to="/"><button>Add Restaurant</button></Link>
+                <button>Add Restaurant</button>
             </form>
         </>
     )
