@@ -11,11 +11,7 @@ function RestaurantInfo(props){
     const [reviews, setReviews] = useState([])
 
     console.log('restaurant-info', props)
-    // let info = []
-    // for (let i=0; i< props.restaurants.length; i++)
-    // if (props.restaurants[i].Name === props.match.params.restaurant){
-    //     info = props.restaurants[i]
-    // }
+
     useEffect(() => {
         const APICall = async() => {
             for (let i =0; i < props.restaurants.length; i++)
@@ -33,9 +29,6 @@ function RestaurantInfo(props){
     console.log('images', images)
     console.log('reviews', reviews)
 
-    // if (!info.Images) {
-    //     return <></>
-    // }
 
     const renderImages = images.map((image, index) => {
         return(
