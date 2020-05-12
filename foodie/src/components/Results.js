@@ -9,7 +9,7 @@ function Results(props) {
     console.log('results-page', props.restaurants)
     console.log('city-searched', props.city)
 
-    let cityRestaurants = props.restaurants.filter(restaurant => restaurant.CityState === props.city)
+    let cityRestaurants = props.restaurants.filter(restaurant => restaurant.CityState.toLowerCase().replace(/\s+/g,'') === props.city.toLowerCase().replace(/\s+/g,''))
     console.log('cityRestaurants', cityRestaurants)
 
     const renderRestaurants = cityRestaurants.map((restaurant, index) => {
@@ -33,7 +33,7 @@ function Results(props) {
             <Navbar bg="dark" variant="dark">
                 <Navbar.Brand>Foodie</Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Search Again</Nav.Link>
+                    <Nav.Link as={Link} to="/">Search Again</Nav.Link>
                     <Nav.Link as={Link} to="/add/your/restaurant">Add Your Business</Nav.Link>
                 </Nav>
             </Navbar>

@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react'
 import Image from 'react-bootstrap/Image'
 import '../css/RestaurantInfo.css'
 import {getResById, createImage, createReview} from '../services/api-helper'
+import {Link} from 'react-router-dom'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
 
 function RestaurantInfo(props){
     const [newImage, setNewImage] = useState('')
@@ -79,7 +82,11 @@ function RestaurantInfo(props){
 
     return(
         <>
-        <h1>This is restaurant info</h1>
+        <Navbar bg="dark" variant="dark">
+            <Nav className="mr-auto">
+                <Nav.Link as={Link} to={`/${info.CityState}`}>Back to Results</Nav.Link>
+            </Nav>
+        </Navbar>
         <div className='reviewContainer'>
             <h2>Reviews</h2>
             {renderReviews}

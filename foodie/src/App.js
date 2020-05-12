@@ -28,6 +28,7 @@ function App() {
 
   const citySubmit = async(e) => {
     e.preventDefault()
+    setCity('')
   }
 
   return (
