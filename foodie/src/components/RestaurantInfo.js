@@ -18,13 +18,31 @@ function RestaurantInfo(props){
 
     const renderImages = info.Images.map((image, index) => {
         return(
-            <Image src={image.image} rounded />
+            <>
+            {/* <Card style={{ width: '18rem' }}>
+                <Card.Img  src={image.image} />
+            </Card> */}
+            <Image style={{ width: '18rem' }} src={image.image} rounded/>
+            </>
+        )
+    })
+
+    const renderReviews = info.Reviews.map((review, index) => {
+        return(
+            <>
+                <p>"{review.Review}"</p>
+            </>
         )
     })
 
     return(
         <>
         <h1>This is restaurant info</h1>
+        <div className='reviewContainer'>
+            <h2>Reviews</h2>
+            {renderReviews}
+        </div>
+        <h2>Images</h2>
         <div className="imageContainer">
             {renderImages}
         </div>
