@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 17px;
+    color: white;
+    line-height: 1.6;
+}
+
+.landingContainer {
+    background-image:url('https://image.freepik.com/free-photo/homemade-pizza-with-mozzarella-dark-background_1220-4548.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.citySearch {
+    margin-bottom: 130px;
+    text-align: center;
+}
+
+.citySearch input {
+    width: 70%;
+    padding: 5px 10px;
+    border-radius: 10px 0 0 10px;
+    border: 0;
+    outline: none;
+}
+
+.citySearch button {
+    background-color: #be2020;
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    font-weight: bold;
+}
+
+/* @media(min-width: 1024px){
+    .citySearch {
+        margin-bottom: 180px;
+    }
+} */
+
+
