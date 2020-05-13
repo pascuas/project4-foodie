@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import Card from 'react-bootstrap/Card'
+import CardDeck from 'react-bootstrap/CardDeck'
 import {Link} from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import '../css/resultsPage.css'
 
 
 function Results(props) {
@@ -15,7 +17,7 @@ function Results(props) {
 
     const renderRestaurants = cityRestaurants.map((restaurant, index) => {
         return(
-            <Card style={{ width: '18rem' }}>
+            <Card>
                 {restaurant.Images[0] ? <Card.Img variant="top" src={restaurant.Images[0].image} /> : <Card.Img variant="top" src="https://www.sbdcnet.org/wp-content/themes/consultix/images/no-image-found-360x250.png" />} 
                 <Card.Body>
                     <Card.Title>{restaurant.Name}</Card.Title>
@@ -38,11 +40,12 @@ function Results(props) {
                     <Nav.Link as={Link} to="/add/your/restaurant">Add Your Business</Nav.Link>
                 </Nav>
             </Navbar>
-            <h1>This is the results page</h1>
             {cityRestaurants.length === 0 &&
             <h1>No restaurants were found. Please search again</h1>
             }
-            {renderRestaurants}
+            <div className="resultsContainer">
+                {renderRestaurants}
+            </div>
         </>
     )
 }
