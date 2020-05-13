@@ -46,13 +46,12 @@ html body {
     }
 
     .card {
-        width: 15rem;
-        margin-right: 40px;
+        width: 13rem;
         height: 50vh;
     }
 
     .resultsContainer {
-        justify-content: flex-start;
+        justify-content: space-evenly;
         margin: 20px 20px;
     }
 }
