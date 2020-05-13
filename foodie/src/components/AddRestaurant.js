@@ -3,6 +3,7 @@ import {createRes} from '../services/api-helper'
 import {Link} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import '../css/addRestaurant.css'
 
 function AddRestaurant() {
     const [name, setName] = useState('')
