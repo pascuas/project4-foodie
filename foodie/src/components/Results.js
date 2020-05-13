@@ -40,7 +40,6 @@ function Results(props) {
                     <Nav.Link as={Link} to="/add/your/restaurant">Add Your Business</Nav.Link>
                 </Nav>
             </Navbar>
-            <h1>This is the results page</h1>
             {cityRestaurants.length === 0 &&
             <h1>No restaurants were found. Please search again</h1>
             }
