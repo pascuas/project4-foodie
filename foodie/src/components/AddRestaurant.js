@@ -3,6 +3,8 @@ import {createRes} from '../services/api-helper'
 import {Link} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
 import '../css/addRestaurant.css'
 
 function AddRestaurant() {
@@ -57,7 +59,12 @@ function AddRestaurant() {
 
     return (
         <>
-            <h1>This is add restaurant page</h1>
+            <Navbar bg="dark" variant="dark">
+                <Navbar.Brand>Foodie</Navbar.Brand>
+                <Nav className="mr-auto">
+                    <Nav.Link as={Link} to="/">Search</Nav.Link>
+                </Nav>
+            </Navbar>
             {/* <form onSubmit={restaurantSubmit}>
                 <label>Restaurant Name:</label><input type="text" value={name} onChange={nameChange}/><br/>
                 <label>Description:</label><input type="text" value={description} onChange={descriptionChange}/><br/>

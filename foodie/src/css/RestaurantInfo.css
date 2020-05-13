@@ -4,5 +4,19 @@
     justify-content: space-evenly;
 }
 
+.imageContainer .rounded {
+    width: 10rem;
+    /* height: 20vw;
+    object-fit: cover; */
+}
 
+.topInfo {
+    text-align: center;
+}
+
+@media(min-width: 768px) {
+    .imageContainer .rounded {
+        width: 15rem
+    }
+}
 
