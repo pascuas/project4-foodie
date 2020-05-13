@@ -7,7 +7,7 @@ function LandingPage(props){
     return (
         <>
         <header className="landingContainer">
-            <h1>foodie!</h1>
+            <p>Foodie</p>
             <form className = "citySearch" onSubmit={props.citySubmit}>
                 <label>Enter City, State Abbreviation</label><input type="text" placeholder="Ex. Los Angeles, CA"value={props.city} onChange={props.cityChange}/>
                 <Link to={`/${props.city}`}><button>Search</button></Link>

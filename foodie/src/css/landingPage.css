@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -43,6 +45,17 @@ body {
     border-radius: 0 10px 10px 0;
     color: white;
     font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+}
+
+.citySearch label {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.landingContainer p {
+    font-family: 'Marck Script', cursive;
+    font-size: 60px
 }
 
 /* @media(min-width: 1024px){
