@@ -15,6 +15,7 @@ function RestaurantInfo(props){
     const [reviews, setReviews] = useState([])
     const [reviewForm, setReviewForm] = useState(false)
     const [imageForm, setImageForm] = useState(false)
+    // const [rateTotal, setRateTotal] = useState(0)
 
     console.log('restaurant-info', props)
 
@@ -24,7 +25,7 @@ function RestaurantInfo(props){
             if (props.restaurants[i].Name === props.match.params.restaurant){
                 setInfo(props.restaurants[i])
                 setImages(props.restaurants[i].Images)
-                setReviews(props.restaurants[i].Reviews)
+                setReviews(props.restaurants[i].Reviews)      
             }
         }
         APICall()
@@ -47,10 +48,48 @@ function RestaurantInfo(props){
     const renderReviews = reviews.map((review, index) => {
         return(
             <>
-                <p>"{review.Review}"</p>
+                <div className="individualReview">
+                    {review.Rating === 5 && <>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/></>}
+
+                    {review.Rating === 4 && <>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+
+                    {review.Rating === 3 && <>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+
+                    {review.Rating === 2 && <>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+
+                    {review.Rating === 1 && <>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+                    <p>"{review.Review}"</p>
+                    
+                </div>
             </>
         )
     })
+
 
     const imageChange = (e) => {
         setNewImage(e.target.value)
