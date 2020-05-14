@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form'
 function RestaurantInfo(props){
     const [newImage, setNewImage] = useState('')
     const [newReview, setNewReview] = useState('')
+    const [newRate, setNewRate] = useState()
     const [info, setInfo] = useState([])
     const [images, setImages] = useState([])
     const [reviews, setReviews] = useState([])
@@ -106,10 +107,15 @@ function RestaurantInfo(props){
         setNewReview(e.target.value)
     }
 
+    const rateChange = (e) => {
+        setNewRate(e.target.value)
+    }
+
     const reviewSubmit = async(e) => {
         e.preventDefault()
-        const json = await createReview(info._id, {"Review": newReview})
+        const json = await createReview(info._id, {"Review": newReview, "Rating": newRate})
         setNewReview('')
+        setNewRate('')
         renderPage()
     }
 
@@ -148,13 +154,24 @@ function RestaurantInfo(props){
 
         {reviewForm &&
         <Form className="formAdd"onSubmit={reviewSubmit}>
-            <Form.Control as="textarea" rows="3" type="text" placeholder="Enter your review here..."value={newReview} onChange={reviewChange}/>
+            <Form.Control as="textarea" rows="3" type="text" placeholder="Enter your review here..."value={newReview} onChange={reviewChange} required="required"/>
+            <Form.Control as="select" type="number" value={newRate} onChange={rateChange} required="required">
+                        <option disabled value="" selected hidden>Rate</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+            </Form.Control>
+            <Form.Text className="text-muted">
+                Rate the restaurant from 1-5
+            </Form.Text>
             <button>Add</button>
         </Form>}
 
         {imageForm && 
         <Form className="formAdd"onSubmit={imageSubmit}>
-            <Form.Control type="text" placeholder="Image File"value={newImage} onChange={imageChange}/>
+            <Form.Control type="text" placeholder="Image File"value={newImage} onChange={imageChange} required="required"/>
             <Form.Text className="text-muted">
                 Accepts .apng, .bmp, .gif, .ico, .cur, .jpg, .jpeg, .jfif, .pjpeg, .pjp, .png, .svg, .tif, .tiff, .webp
             </Form.Text>
@@ -167,7 +184,7 @@ function RestaurantInfo(props){
         </div>
         <div className='reviewContainer'>
             <h2>Reviews</h2>
-            {renderReviews}
+            {renderReviews.reverse()}
         </div>
         </> 
     )
