@@ -76,22 +76,23 @@ function AddRestaurant() {
                 <label>Phone Number:</label><input type="text" value={phoneNum} onChange={phoneChange}/><br/>
                 <button>Add Restaurant</button>
             </form> */}
-            <Form onSubmit={restaurantSubmit}>
+            <Form onSubmit={restaurantSubmit} className="addResContainer">
                 <Form.Group>
                     <Form.Label>Restaurant Name</Form.Label>
-                    <Form.Control type="text" value={name} onChange={nameChange}/>
+                    <Form.Control type="text" value={name} onChange={nameChange} required="required"/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Description</Form.Label>
-                    <Form.Control type="text" placeholder="Cafe, Breakfast & Brunch, Pizza, etc" maxLength="25" value={description} onChange={descriptionChange}/>
+                    <Form.Control type="text" placeholder="Cafe, Breakfast & Brunch, Pizza, etc" maxLength="25" value={description} onChange={descriptionChange} required="required"/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Type</Form.Label>
-                    <Form.Control type="text" placeholder="Lunch, Dessert, etc" maxLength="20" value={type} onChange={typeChange}/>
+                    <Form.Control type="text" placeholder="Lunch, Dessert, etc" maxLength="20" value={type} onChange={typeChange} required="required"/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Cost</Form.Label>
-                    <Form.Control as="select" type="text" value={cost} onChange={costChange}>
+                    <Form.Control as="select" type="text" value={cost} onChange={costChange} required="required">
+                        <option disabled value="" selected hidden></option>
                         <option>$</option>
                         <option>$$</option>
                         <option>$$$</option>
@@ -102,15 +103,15 @@ function AddRestaurant() {
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>City & State Abbreviation</Form.Label>
-                    <Form.Control type="text" placeholder="Los Angeles, CA" maxLength="30" value={cityState} onChange={cityStateChange}/>
+                    <Form.Control type="text" placeholder="Los Angeles, CA" maxLength="30" value={cityState} onChange={cityStateChange} required="required"/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Address:</Form.Label>
-                    <Form.Control type="text" placeholder="224 Seir Ave" maxLength="30" value={address} onChange={addressChange}/>
+                    <Form.Control type="text" placeholder="224 Seir Ave" maxLength="30" value={address} onChange={addressChange} required="required"/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Phone Number:</Form.Label>
-                    <Form.Control type="text" placeholder="(123) 456-7891" value={phoneNum} onChange={phoneChange}/>
+                    <Form.Control type="text" placeholder="(123) 456-7891" value={phoneNum} onChange={phoneChange} required="required"/>
                 </Form.Group>
                 <Button type="submit">Add Restaurant</Button>
             </Form>

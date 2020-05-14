@@ -17,6 +17,7 @@ function RestaurantInfo(props){
     const [reviews, setReviews] = useState([])
     const [reviewForm, setReviewForm] = useState(false)
     const [imageForm, setImageForm] = useState(false)
+    const [updateForm, setUpdateForm] = useState(false)
     // const [rateTotal, setRateTotal] = useState(0)
 
     console.log('restaurant-info', props)
@@ -135,6 +136,10 @@ function RestaurantInfo(props){
         setImageForm(!imageForm)
     }
 
+    const showUpdateForm = () => {
+        setUpdateForm(!updateForm)
+    }
+
     return(
         <>
         <Navbar bg="dark" variant="dark">
@@ -148,13 +153,14 @@ function RestaurantInfo(props){
             <p>{info.Description}</p>
             <p>{info.Address}, {info.CityState}</p>
             <p>{info.PhoneNum}</p>
+            <button onClick={showUpdateForm}>Edit</button>
         </div>
         <div className="topButtons">
             <button onClick={showReviewForm}>Write A Review</button>
             <button onClick={showImageForm}>Add A Picture</button>
         </div>
 
-        <UpdateInfo info={info} renderPage={renderPage}/>
+        {updateForm && <UpdateInfo info={info} renderPage={renderPage}/>}
         {reviewForm &&
         <Form className="formAdd"onSubmit={reviewSubmit}>
             <Form.Control as="textarea" rows="3" type="text" placeholder="Enter your review here..."value={newReview} onChange={reviewChange} required="required"/>

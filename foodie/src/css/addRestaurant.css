@@ -6,6 +6,15 @@
     margin: 0 2rem 1rem;
 }
 
+.addResContainer {
+    margin: 3rem 0
+}
+
+.addResContainer .btn-primary {
+    background-color: #be2020;
+    border-color: #be2020;
+}
+
 @media(min-width: 768px) {
     .form-group {
         margin: 0 6rem 1rem;
