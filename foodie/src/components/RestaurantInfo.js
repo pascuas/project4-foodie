@@ -107,13 +107,18 @@ function RestaurantInfo(props){
             <button onClick={showImageForm}>Add A Picture</button>
         </div>
 
-        {reviewForm &&<Form onSubmit={reviewSubmit}>
-            <Form.Label>Review:</Form.Label><Form.Control as="textarea" rows="3" type="text" value={newReview} onChange={reviewChange}/>
+        {reviewForm &&
+        <Form className="formAdd"onSubmit={reviewSubmit}>
+            <Form.Control as="textarea" rows="3" type="text" placeholder="Enter your review here..."value={newReview} onChange={reviewChange}/>
             <button>Add</button>
         </Form>}
 
-        {imageForm && <Form onSubmit={imageSubmit}>
-            <Form.Label>Image Url:</Form.Label><Form.Control type="text" value={newImage} onChange={imageChange}/>
+        {imageForm && 
+        <Form className="formAdd"onSubmit={imageSubmit}>
+            <Form.Control type="text" placeholder="Image File"value={newImage} onChange={imageChange}/>
+            <Form.Text className="text-muted">
+                Accepts .apng, .bmp, .gif, .ico, .cur, .jpg, .jpeg, .jfif, .pjpeg, .pjp, .png, .svg, .tif, .tiff, .webp
+            </Form.Text>
             <button>Add</button>
         </Form>} 
 

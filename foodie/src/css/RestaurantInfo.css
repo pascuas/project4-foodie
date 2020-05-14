@@ -80,6 +80,22 @@
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+.formAdd {
+    margin: 2rem 2rem 1rem;
+}
+
+.formAdd button {
+    background-color: #be2020;
+    padding: 1px 6px;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
 @media(min-width: 768px) {
     .imageContainer {
         justify-content: flex-start;
@@ -106,11 +122,25 @@
     .reviewContainer {
         margin: 1rem 2.5rem;
     }
+
+    .formAdd {
+        margin: 2rem 10rem 1rem;
+    }
+}
+
+@media(min-width: 1024px) {
+    .formAdd {
+        margin: 2rem 20rem 1rem;
+    }
 }
 
 @media(min-width: 1440px) {
     .imageContainer .rounded {
         margin-right: 1.3rem;
+    }
+
+    .formAdd {
+        margin: 2rem 30rem 1rem;
     }
 }
 
