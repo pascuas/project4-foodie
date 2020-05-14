@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
+import UpdateInfo from './UpdateInfo'
 
 function RestaurantInfo(props){
     const [newImage, setNewImage] = useState('')
@@ -123,6 +124,7 @@ function RestaurantInfo(props){
         const json = await getResById(info._id)
         setImages(json.Images)
         setReviews(json.Reviews)
+        setInfo(json)
     }
 
     const showReviewForm = () => {
@@ -152,6 +154,7 @@ function RestaurantInfo(props){
             <button onClick={showImageForm}>Add A Picture</button>
         </div>
 
+        <UpdateInfo info={info} renderPage={renderPage}/>
         {reviewForm &&
         <Form className="formAdd"onSubmit={reviewSubmit}>
             <Form.Control as="textarea" rows="3" type="text" placeholder="Enter your review here..."value={newReview} onChange={reviewChange} required="required"/>
