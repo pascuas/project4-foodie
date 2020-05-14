@@ -36,7 +36,7 @@ function Results(props) {
             <Navbar bg="dark" variant="dark">
                 <Navbar.Brand>Foodie</Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link as={Link} to="/">Search Again</Nav.Link>
+                    <Nav.Link href="/">Search Again</Nav.Link>
                     <Nav.Link as={Link} to="/add/your/restaurant">Add Your Business</Nav.Link>
                 </Nav>
             </Navbar>
