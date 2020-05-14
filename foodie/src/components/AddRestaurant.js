@@ -62,7 +62,8 @@ function AddRestaurant() {
             <Navbar bg="dark" variant="dark">
                 <Navbar.Brand>Foodie</Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link as={Link} to="/">Search</Nav.Link>
+                    <Nav.Link href="/">Search</Nav.Link>
+                    {/* <Nav.Link as={Link} to="/">Search</Nav.Link>  */}
                 </Nav>
             </Navbar>
             {/* <form onSubmit={restaurantSubmit}>
