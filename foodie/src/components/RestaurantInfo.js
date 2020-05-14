@@ -6,15 +6,19 @@ import {Link} from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
+import UpdateInfo from './UpdateInfo'
 
 function RestaurantInfo(props){
     const [newImage, setNewImage] = useState('')
     const [newReview, setNewReview] = useState('')
+    const [newRate, setNewRate] = useState()
     const [info, setInfo] = useState([])
     const [images, setImages] = useState([])
     const [reviews, setReviews] = useState([])
     const [reviewForm, setReviewForm] = useState(false)
     const [imageForm, setImageForm] = useState(false)
+    const [updateForm, setUpdateForm] = useState(false)
+    // const [rateTotal, setRateTotal] = useState(0)
 
     console.log('restaurant-info', props)
 
@@ -24,7 +28,7 @@ function RestaurantInfo(props){
             if (props.restaurants[i].Name === props.match.params.restaurant){
                 setInfo(props.restaurants[i])
                 setImages(props.restaurants[i].Images)
-                setReviews(props.restaurants[i].Reviews)
+                setReviews(props.restaurants[i].Reviews)      
             }
         }
         APICall()
@@ -47,10 +51,48 @@ function RestaurantInfo(props){
     const renderReviews = reviews.map((review, index) => {
         return(
             <>
-                <p>"{review.Review}"</p>
+                <div className="individualReview">
+                    {review.Rating === 5 && <>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/></>}
+
+                    {review.Rating === 4 && <>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+
+                    {review.Rating === 3 && <>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+
+                    {review.Rating === 2 && <>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+
+                    {review.Rating === 1 && <>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+                    <p>"{review.Review}"</p>
+                    
+                </div>
             </>
         )
     })
+
 
     const imageChange = (e) => {
         setNewImage(e.target.value)
@@ -67,10 +109,15 @@ function RestaurantInfo(props){
         setNewReview(e.target.value)
     }
 
+    const rateChange = (e) => {
+        setNewRate(e.target.value)
+    }
+
     const reviewSubmit = async(e) => {
         e.preventDefault()
-        const json = await createReview(info._id, {"Review": newReview})
+        const json = await createReview(info._id, {"Review": newReview, "Rating": newRate})
         setNewReview('')
+        setNewRate('')
         renderPage()
     }
 
@@ -78,6 +125,7 @@ function RestaurantInfo(props){
         const json = await getResById(info._id)
         setImages(json.Images)
         setReviews(json.Reviews)
+        setInfo(json)
     }
 
     const showReviewForm = () => {
@@ -86,6 +134,10 @@ function RestaurantInfo(props){
 
     const showImageForm = () => {
         setImageForm(!imageForm)
+    }
+
+    const showUpdateForm = () => {
+        setUpdateForm(!updateForm)
     }
 
     return(
@@ -101,19 +153,37 @@ function RestaurantInfo(props){
             <p>{info.Description}</p>
             <p>{info.Address}, {info.CityState}</p>
             <p>{info.PhoneNum}</p>
+            <button onClick={showUpdateForm}>Edit</button>
         </div>
         <div className="topButtons">
             <button onClick={showReviewForm}>Write A Review</button>
             <button onClick={showImageForm}>Add A Picture</button>
         </div>
 
-        {reviewForm &&<Form onSubmit={reviewSubmit}>
-            <Form.Label>Review:</Form.Label><Form.Control as="textarea" rows="3" type="text" value={newReview} onChange={reviewChange}/>
+        {updateForm && <UpdateInfo info={info} renderPage={renderPage}/>}
+        {reviewForm &&
+        <Form className="formAdd"onSubmit={reviewSubmit}>
+            <Form.Control as="textarea" rows="3" type="text" placeholder="Enter your review here..."value={newReview} onChange={reviewChange} required="required"/>
+            <Form.Control as="select" type="number" value={newRate} onChange={rateChange} required="required">
+                        <option disabled value="" selected hidden>Rate</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+            </Form.Control>
+            <Form.Text className="text-muted">
+                Rate the restaurant from 1-5
+            </Form.Text>
             <button>Add</button>
         </Form>}
 
-        {imageForm && <Form onSubmit={imageSubmit}>
-            <Form.Label>Image Url:</Form.Label><Form.Control type="text" value={newImage} onChange={imageChange}/>
+        {imageForm && 
+        <Form className="formAdd"onSubmit={imageSubmit}>
+            <Form.Control type="text" placeholder="Image File"value={newImage} onChange={imageChange} required="required"/>
+            <Form.Text className="text-muted">
+                Accepts .apng, .bmp, .gif, .ico, .cur, .jpg, .jpeg, .jfif, .pjpeg, .pjp, .png, .svg, .tif, .tiff, .webp
+            </Form.Text>
             <button>Add</button>
         </Form>} 
 
@@ -123,7 +193,7 @@ function RestaurantInfo(props){
         </div>
         <div className='reviewContainer'>
             <h2>Reviews</h2>
-            {renderReviews}
+            {renderReviews.reverse()}
         </div>
         </> 
     )
