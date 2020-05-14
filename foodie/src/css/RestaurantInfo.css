@@ -35,6 +35,12 @@
     font-weight: bold;
 }
 
+.topInfo button {
+    padding: 0 6px;
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 3px;
+}
+
 .topButtons {
     text-align: center;
 }
