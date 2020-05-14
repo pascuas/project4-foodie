@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .imageContainer {
     display: flex;
@@ -8,12 +10,29 @@
 
 .imageContainer .rounded {
     width: 10rem;
+    margin-bottom: 1rem;
     /* height: 20vw;
     object-fit: cover; */
 }
 
 .topInfo {
     text-align: center;
+    margin: 10px 0;
+}
+
+.topInfo h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #2b273c;
+}
+
+.topInfo p {
+    margin-bottom: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.topInfo span{
+    font-weight: bold;
 }
 
 .topButtons {
@@ -35,9 +54,63 @@
     margin-right: 5px;
 }
 
+.imageText {
+    margin: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #2b273c;
+}
+
+.reviewContainer {
+    margin: 10px;
+}
+
+.reviewContainer h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #2b273c;
+}
+
+.reviewContainer p {
+    border-bottom: 1px solid #768089;
+    padding-bottom: 1rem;
+    margin: 0 1rem 1rem;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
 @media(min-width: 768px) {
+    .imageContainer {
+        justify-content: flex-start;
+        margin: 1rem 2rem;
+    }
+
     .imageContainer .rounded {
-        width: 15rem
+        width: 13rem;
+        margin-right: 1.66rem;
+    }
+
+    .topInfo h1 {
+        font-size: 2.5rem;
+    }
+
+    .topInfo p {
+        font-size: 1.2rem;
+    }
+
+    .imageText {
+        margin: 1rem 2.5rem;
+    }
+
+    .reviewContainer {
+        margin: 1rem 2.5rem;
+    }
+}
+
+@media(min-width: 1440px) {
+    .imageContainer .rounded {
+        margin-right: 1.3rem;
     }
 }
 

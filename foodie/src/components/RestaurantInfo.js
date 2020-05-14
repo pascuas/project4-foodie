@@ -97,7 +97,8 @@ function RestaurantInfo(props){
         </Navbar>
         <div className="topInfo">
             <h1>{info.Name}</h1>
-            <p>{info.Cost}  {info.Description}</p>
+            <p><span>{info.Cost}</span></p>
+            <p>{info.Description}</p>
             <p>{info.Address}, {info.CityState}</p>
             <p>{info.PhoneNum}</p>
         </div>
@@ -116,13 +117,13 @@ function RestaurantInfo(props){
             <button>Add</button>
         </Form>} 
 
+        <h2 className="imageText">Images</h2>
+        <div className="imageContainer">
+            {renderImages}
+        </div>
         <div className='reviewContainer'>
             <h2>Reviews</h2>
             {renderReviews}
-        </div>
-        <h2>Images</h2>
-        <div className="imageContainer">
-            {renderImages}
         </div>
         </> 
     )
