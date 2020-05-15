@@ -39,21 +39,21 @@ Ever had a hard time choosing somewhere to eat? With this application a user wil
 | Controllers | H | 5hrs | 4hrs | 4hrs |
 | Seed | H | 2hrs | 3hrs | 3hrs |
 | Heroku Deployment | H | 1hr | 3hrs | 3hrs |
-| Setting Up React | H | 0.5hr | |
-| Switch, Links, Routes | H | 1hr | | |
-| Connection from backend | H | 4hrs | | |
-| Landing Page | H | 2hrs | | |
-| Testing Landing Page| H | 1 hr | | |
-| Results Page | H | 4hrs | | |
-| Testing Results Page | H | 1hr | | |
-| Restaurant Info Page | H | 4hrs | | |
-| Testing Restaurants Info Page | H | 1hr | | |
-| Favorites Page | H | 3hrs | | |
-| Testing Favorites Page | H | 1hr | | |
-| CRUD Options | H | 4hrs | | |
-| CSS/Styling | H | 4hrs | | |
+| Setting Up React | H | 0.5hr | 0.5| 0.5 |
+| Switch, Links, Routes | H | 1hr | 1hr | 1hr |
+| Connection from backend | H | 4hrs | 3hrs | 3hrs|
+| Landing Page | H | 2hrs | 4hrs | 4hrs |
+| Testing Landing Page| H | 1 hr | 1hr | 1hr |
+| Results Page | H | 4hrs | 6hrs | 6hrs |
+| Testing Results Page | H | 1hr | 1hr | 1hr |
+| Restaurant Info Page | H | 4hrs | 7hrs | 7hrs |
+| Testing Restaurants Info Page | H | 1hr | 2hrs | 2hrs |
+| Favorites Page | H | 3hrs | 0hrs | 0hrs |
+| Testing Favorites Page | H | 1hr | 0hrs | 0hrs |
+| CRUD Options | H | 4hrs | 4hrs | 4hrs |
+| CSS/Styling | H | 4hrs | 6hrs | 6hrs |
 | Netlify Deployment | H | 1hr | | |
-| Total | H | 44.5hrs | | |
+| Total | H | 44.5hrs | 48.5hrs | 48.5hrs |
 
 ## MVP
 - Connection of the backend with the frontend
@@ -61,11 +61,8 @@ Ever had a hard time choosing somewhere to eat? With this application a user wil
 - Allow users input city on landing page
 - Multiple routes to different pages
 - Description of each restaurant
-- Ability to add restaurants to favorites and delete from favorites
+- Ability to add reviews and images to the business/restaurants
 
-## Post-MVP
-- Add reviews to restaurants
-- Add a filter
 
 ## Addtional Libraries
 - Bootstrap
