@@ -52,8 +52,8 @@ Ever had a hard time choosing somewhere to eat? With this application a user wil
 | Testing Favorites Page | H | 1hr | 0hrs | 0hrs |
 | CRUD Options | H | 4hrs | 4hrs | 4hrs |
 | CSS/Styling | H | 4hrs | 6hrs | 6hrs |
-| Netlify Deployment | H | 1hr | | |
-| Total | H | 44.5hrs | 48.5hrs | 48.5hrs |
+| Netlify Deployment | H | 1hr | 1.5hrs | 1.5hrs |
+| Total | H | 44.5hrs | 50hrs | 50hrs |
 
 ## MVP
 - Connection of the backend with the frontend
