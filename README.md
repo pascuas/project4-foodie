@@ -15,7 +15,7 @@ Live Link
 ## How It Looks
 
 ## Built With
-MongoDB, Express, React, Node
+MongoDB, Express, React, Node <br />
 (Addtional: React-BootStrap)
 
 ## Features
