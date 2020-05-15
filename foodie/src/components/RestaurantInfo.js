@@ -162,7 +162,7 @@ function RestaurantInfo(props){
             <button onClick={showUpdateForm}>Edit</button>
         </div>
         <div className="topButtons">
-            <button onClick={showReviewForm}>Write A Review</button>
+            <button onClick={showReviewForm}>Add A Review</button>
             <button onClick={showImageForm}>Add A Picture</button>
         </div>
 

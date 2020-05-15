@@ -37,11 +37,11 @@ function Results(props) {
                 <Navbar.Brand>Foodie</Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Search Again</Nav.Link>
-                    <Nav.Link as={Link} to="/add/your/restaurant">Add Your Business</Nav.Link>
+                    <Nav.Link as={Link} to="/add/your/restaurant">Add A Business</Nav.Link>
                 </Nav>
             </Navbar>
             {cityRestaurants.length === 0 &&
-            <h1>No restaurants were found. Please search again</h1>
+            <h1 className="error">Sorry, no results. Please search again or add a business.</h1>
             }
             <div className="resultsContainer">
                 {renderRestaurants}
