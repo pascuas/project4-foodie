@@ -18,9 +18,6 @@ function RestaurantInfo(props){
     const [reviewForm, setReviewForm] = useState(false)
     const [imageForm, setImageForm] = useState(false)
     const [updateForm, setUpdateForm] = useState(false)
-    // const [rateTotal, setRateTotal] = useState(0)
-
-    console.log('restaurant-info', props)
 
     useEffect(() => {
         const APICall = async() => {
@@ -35,15 +32,10 @@ function RestaurantInfo(props){
     }, [])
     
 
-    console.log('info', info)
-    console.log('images', images)
-    console.log('reviews', reviews)
-
-
     const renderImages = images.map((image, index) => {
         return(
             <>
-            <Image src={image.image} rounded/>
+            <Image key={index} src={image.image} rounded/>
             </>
         )
     })
@@ -51,41 +43,41 @@ function RestaurantInfo(props){
     const renderReviews = reviews.map((review, index) => {
         return(
             <>
-                <div className="individualReview">
+                <div className="individualReview" key={index}>
                     {review.Rating === 5 && <>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/></>}
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/></>}
 
                     {review.Rating === 4 && <>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png" alt=""/></>}
 
                     {review.Rating === 3 && <>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png" alt=""/></>}
 
                     {review.Rating === 2 && <>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png" alt=""/></>}
 
                     {review.Rating === 1 && <>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/>
-                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png"/></>}
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png" alt=""/>
+                    <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466602/Pictures/outline-star-16_hjphwu.png" alt=""/></>}
                     <p>"{review.Review}"</p>
                     
                 </div>

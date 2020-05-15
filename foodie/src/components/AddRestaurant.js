@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {createRes} from '../services/api-helper'
-import {Link} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Navbar from 'react-bootstrap/Navbar'
@@ -63,19 +62,8 @@ function AddRestaurant() {
                 <Navbar.Brand>Foodie</Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Search</Nav.Link>
-                    {/* <Nav.Link as={Link} to="/">Search</Nav.Link>  */}
                 </Nav>
             </Navbar>
-            {/* <form onSubmit={restaurantSubmit}>
-                <label>Restaurant Name:</label><input type="text" value={name} onChange={nameChange}/><br/>
-                <label>Description:</label><input type="text" value={description} onChange={descriptionChange}/><br/>
-                <label>Type:</label><input type="text" value={type} onChange={typeChange}/><br/>
-                <label>Cost:</label><input type="text" value={cost} onChange={costChange}/><br/>
-                <label>CityState:</label><input type="text" value={cityState} onChange={cityStateChange}/><br/>
-                <label>Address:</label><input type="text" value={address} onChange={addressChange}/><br/>
-                <label>Phone Number:</label><input type="text" value={phoneNum} onChange={phoneChange}/><br/>
-                <button>Add Restaurant</button>
-            </form> */}
             <Form onSubmit={restaurantSubmit} className="addResContainer">
                 <Form.Group>
                     <Form.Label>Business Name</Form.Label>
