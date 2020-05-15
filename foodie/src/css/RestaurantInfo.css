@@ -11,8 +11,6 @@
 .imageContainer .rounded {
     width: 10rem;
     margin-bottom: 1rem;
-    /* height: 20vw;
-    object-fit: cover; */
 }
 
 .topInfo {
@@ -89,9 +87,6 @@
 }
 
 .reviewContainer p {
-    /* border-bottom: 1px solid #768089;
-    padding-bottom: 1rem;
-    margin: 0 1rem 1rem; */
     font-family: 'Roboto Condensed', sans-serif;
 }
 

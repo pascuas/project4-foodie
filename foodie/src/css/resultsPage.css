@@ -37,6 +37,12 @@ html body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+.error {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+}
 
 @media(min-width: 768px){
     .card-img-top {
