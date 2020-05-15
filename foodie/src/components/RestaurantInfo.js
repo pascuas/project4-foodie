@@ -171,7 +171,7 @@ function RestaurantInfo(props){
                         <option>5</option>
             </Form.Control>
             <Form.Text className="text-muted">
-                Rate the restaurant from 1-5
+                Rate place from 1-5
             </Form.Text>
             <button>Add</button>
         </Form>}

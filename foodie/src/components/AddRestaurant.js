@@ -86,7 +86,7 @@ function AddRestaurant() {
                         <option>$$$</option>
                     </Form.Control>
                     <Form.Text className="text-muted">
-                        Determine the cost of the restaurant 
+                        Determine the cost 
                     </Form.Text>
                 </Form.Group>
                 <Form.Group>
