@@ -36,7 +36,9 @@ let cityRestaurants = props.restaurants.filter(restaurant => restaurant.CityStat
 {cityRestaurants.length === 0 &&
             <h1 className="error">Sorry, no results. Please search again or add a business.</h1>
             }
- 
+
+
+
 ### This is a code snippet on how the reviews were rendered ###
 
 const renderReviews = reviews.map((review, index) => {
@@ -50,7 +52,6 @@ const renderReviews = reviews.map((review, index) => {
              <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/>
          <img src="https://res.cloudinary.com/drxoihdbb/image/upload/v1589466164/Pictures/star-8-16_etvyow.png" alt=""/></>}
           <p>"{review.Review}"<p>
-        </div>
-         
+        </div> 
 
 ```
