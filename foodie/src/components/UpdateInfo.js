@@ -47,7 +47,7 @@ function UpdateInfo(props) {
                 <Form.Label>Address:</Form.Label>
                 <Form.Control type="text" placeholder={props.info.Address} maxLength="30" value={address} onChange={addressChange} required="required"/>
                 <Form.Label>Phone Number:</Form.Label>
-                <Form.Control type="text" placeholder={props.info.PhoneNum} value={phoneNum} onChange={phoneChange} required="required"/>
+                <Form.Control type="tel" placeholder="Follow format (123) 456-7893" pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}" value={phoneNum} onChange={phoneChange} required="required"/>
                 <button>Update</button>      
             </Form>
         </>
