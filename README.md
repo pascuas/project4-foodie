@@ -10,7 +10,7 @@ The Foodie application allows users to search for places to eat or drink within 
 This was a chance for us in my coding bootcamp to build anything that we wanted. With this being the first time on my own building a full stack app, I wanted to reinforce the material that we learned throughout the 3 months of the bootcamp. Therefore, I used MongoDB, Express, React, and Node to build this application. Additionally, I always love trying new places to eat or drink and a fun way of doing this project was making an application where I can see the reviews and pictures of the place. Also, having the ability to see pictures and reviews of a place allows me to make a decision if I am going to try it or not. 
 
 ## Build Status
-Live Link
+Live Link: https://ga-foodie.netlify.app/
 
 ## How It Looks
 
