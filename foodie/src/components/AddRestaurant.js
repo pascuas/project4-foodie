@@ -101,7 +101,7 @@ function AddRestaurant() {
                     <Form.Label>Phone Number:</Form.Label>
                     <Form.Control type="tel" placeholder="(123) 456-7891" pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}" value={phoneNum} onChange={phoneChange} required="required"/>
                 </Form.Group>
-                <Button type="submit">Add Restaurant</Button>
+                <Button type="submit">Add</Button>
             </Form>
             
         </>
