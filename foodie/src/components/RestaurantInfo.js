@@ -130,14 +130,20 @@ function RestaurantInfo(props){
 
     const showReviewForm = () => {
         setReviewForm(!reviewForm)
+        setImageForm(false)
+        setUpdateForm(false)
     }
 
     const showImageForm = () => {
         setImageForm(!imageForm)
+        setReviewForm(false)
+        setUpdateForm(false)
     }
 
     const showUpdateForm = () => {
         setUpdateForm(!updateForm)
+        setReviewForm(false)
+        setImageForm(false)
     }
 
     return(
