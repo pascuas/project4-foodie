@@ -78,16 +78,16 @@ function AddRestaurant() {
             </form> */}
             <Form onSubmit={restaurantSubmit} className="addResContainer">
                 <Form.Group>
-                    <Form.Label>Restaurant Name</Form.Label>
+                    <Form.Label>Business Name</Form.Label>
                     <Form.Control type="text" value={name} onChange={nameChange} required="required"/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Description</Form.Label>
-                    <Form.Control type="text" placeholder="Cafe, Breakfast & Brunch, Pizza, etc" maxLength="25" value={description} onChange={descriptionChange} required="required"/>
+                    <Form.Control type="text" placeholder="Cafe, Ice Cream, Pizza, Burgers, etc" maxLength="25" value={description} onChange={descriptionChange} required="required"/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Type</Form.Label>
-                    <Form.Control type="text" placeholder="Lunch, Dessert, etc" maxLength="20" value={type} onChange={typeChange} required="required"/>
+                    <Form.Control type="text" placeholder="Lunch, Dessert, Mediterranean, Asian, etc" maxLength="20" value={type} onChange={typeChange} required="required"/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Cost</Form.Label>
