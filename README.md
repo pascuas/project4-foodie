@@ -13,6 +13,11 @@ This was a chance for us in my coding bootcamp to build anything that we wanted.
 Live Link: https://ga-foodie.netlify.app/
 
 ## How It Looks
+![alt text](https://res.cloudinary.com/drxoihdbb/image/upload/v1589563657/Pictures/Screen_Shot_2020-05-15_at_10.09.56_AM_fni7kx.png)
+
+![alt text](https://res.cloudinary.com/drxoihdbb/image/upload/v1589562712/Pictures/Screen_Shot_2020-05-15_at_10.10.24_AM_bkwgpb.png)
+
+![alt text](https://res.cloudinary.com/drxoihdbb/image/upload/v1589562726/Pictures/Screen_Shot_2020-05-15_at_10.10.53_AM_aukifb.png)
 
 ## Built With
 MongoDB, Express, React, Node <br />
